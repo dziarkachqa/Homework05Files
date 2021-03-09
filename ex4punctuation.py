@@ -7,11 +7,11 @@
 
 # Note that all stats should exclude punctutation!
 
-'''Something wrong with the encoding of this file.
-If you use errors = "ignore" it will remove unnedded characters.'''
+#Something wrong with the encoding of this file.
+#If you use errors = "ignore" it will remove unnedded characters.'''
 
+def open_file(x):    
 '''create function to open the file'''
-def open_file(x):
     with open("sometext.txt", encoding = "utf8")as text_file:
         if x == "byline":
             text_line = text_file.readlines()
@@ -20,8 +20,8 @@ def open_file(x):
             text_file = text_file.read()
             return text_file
 
-'''create function to count all the words(using open_file function as a var)'''
 def words_counting(open_file):
+'''create function to count all the words(using open_file function as a var)'''    
     total_words = 0
     #to count the words we have to slip the text in to separated words
     words_list = open_file.split()
@@ -30,13 +30,14 @@ def words_counting(open_file):
     return total_words
 
 
-'''create function to count all the characters'''
 def characters_counting(open_file):
+'''create function to count all the characters''' 
     string_file = len(open_file)
     return (f"Total charachters in file: {string_file}")
 
-'''create function to count Avg words per line'''
+
 def avg_words_per_line(open_file, words_counting):
+'''create function to count Avg words per line'''
     total_words = words_counting
     number_of_lines = 0
     read_byline = open_file
@@ -45,8 +46,8 @@ def avg_words_per_line(open_file, words_counting):
     words_per_line = total_words / number_of_lines
     return f"Average words per line: {round(words_per_line,1)}"
 
-''' create a function to count Avg len of word:'''
 def avg_len_of_word(open_file, words_counting):
+''' create a function to count Avg len of word:'''
     total_words = words_counting
     total_letters = 0
     for letter in open_file:
